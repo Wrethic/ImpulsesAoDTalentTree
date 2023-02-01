@@ -1,0 +1,177 @@
+.aod-talent-tree-space {
+    padding-bottom: 111.111111111%;
+    position: relative;
+}
+
+.aod-talent-tree-grid {
+    display: grid;
+    grid-template-columns: repeat(40, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 660px;
+}
+
+.aod-talent-tree {
+    position: relative;
+    user-select: none;
+}
+
+.aod-talent-tree-talent {
+    filter: grayscale(100%);
+    margin: 20%;
+    position: relative;
+    z-index: 20;
+}
+
+.aod-talent-tree-talent-boundary, .aod-talent-tree-talent-inner, .aod-talent-tree-talent-inner-background {
+    box-sizing: border-box;
+    inset: 0;
+    position: absolute;
+}
+
+.aod-talent-tree-talent-inner {
+    inset: 10%;
+    overflow: hidden;
+}
+
+.aod-talent-tree-talent-inner-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+}
+
+.aod-talent-tree-talent[data-available] {
+    cursor: pointer;
+    filter: none;
+}
+
+.aod-talent-tree [data-row="1"] {
+    grid-row: 1;
+}
+
+.aod-talent-tree [data-row="2"] {
+	grid-row: 2;
+}
+
+.aod-talent-tree [data-row="3"] {
+	grid-row: 3;
+}
+
+.aod-talent-tree [data-row="4"] {
+	grid-row: 4;
+}
+
+.aod-talent-tree [data-row="5"] {
+	grid-row: 5;
+}
+
+.aod-talent-tree [data-row="6"] {
+	grid-row: 5;
+}
+
+
+.aod-talent-tree [data-column="1"] {
+	grid-column: 1 / 40;
+}
+.aod-talent-tree [data-column="2"] {
+    grid-column: 3 / 40;
+}
+
+.aod-talent-tree [data-column="3"] {
+	grid-column: 5 / 40;
+}
+
+.aod-talent-tree [data-column="4"] {
+    grid-column: 7 / 40;
+}
+
+.aod-talent-tree [data-column="5"] {
+    grid-column: 9 / 40;
+}
+
+.aod-talent-tree [data-column="6"] {
+    grid-column: 11 / 40;
+}
+
+.aod-talent-tree [data-column="7"] {
+    grid-column: 13 / 40;
+}
+
+.aod-talent-tree [data-column="8"] {
+	grid-column: 15 / 40;
+}
+
+.aod-talent-tree [data-column="9"] {
+    grid-column: 17 / 40;
+}
+
+.aod-talent-tree [data-column="10"] {
+    grid-column: 19 / 40;
+}
+
+.aod-talent-tree [data-column="11"] {
+	grid-column: 21 / 40;
+}
+
+.aod-talent-tree [data-column="12"] {
+    grid-column: 23 / 40;
+}
+.aod-talent-tree [data-column="13"] {
+    grid-column: 25 / 40;
+}
+.aod-talent-tree [data-column="14"] {
+    grid-column: 27 / 40;
+}
+.aod-talent-tree [data-column="15"] {
+    grid-column: 29 / 40;
+}
+.aod-talent-tree [data-column="16"] {
+    grid-column: 31 / 40;
+}
+.aod-talent-tree [data-column="17"] {
+    grid-column: 33 / 40;
+}
+.aod-talent-tree [data-column="18"] {
+    grid-column: 35 / 40;
+}
+
+.aod-talent-tree-connection {
+    height: 12px;
+    margin-top: -6px;
+    position: absolute;
+    transform-origin: left center;
+}
+
+.aod-talent-tree-connection-line {
+    background-image: url(../../resources/img/talents-arrow-line-gray.png);
+    background-position: center;
+    background-repeat: repeat-x;
+    background-size: 8px;
+    inset: 0;
+    position: absolute;
+}
+
+.aod-talent-tree-connection-arrow {
+    background-image: url(../../resources/img/talents-arrow-head-gray.png);
+    background-size: cover;
+    height: 12px;
+    position: absolute;
+    right: -6px;
+    top: 0;
+    transform: rotate(270deg);
+    width: 12px;
+}
+
+.aod-talent-tree-connection[data-available] .dragonflight-talent-tree-connection-line {
+    background-image: url(../../resources/img/talents-arrow-line-yellow.png);
+}
+
+.aod-talent-tree-connection[data-available] .dragonflight-talent-tree-connection-arrow {
+    background-image: url(../../resources/img/talents-arrow-head-yellow.png);
+}
