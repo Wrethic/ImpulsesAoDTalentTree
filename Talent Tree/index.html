@@ -6,8 +6,6 @@
   <link rel='stylesheet' href='resources/css/index.css' type='text/css' />
   <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 	<!-- <link rel="stylesheet" href="css/bootstrap-responsive.css"> -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="resources/js/talentcalc.js"></script>
 </head>
 <body>
 <h1>Version 0.01a</h1>
@@ -15,7 +13,7 @@
 		<div class="aod-talent-tree-space" style="font-size: 9px";>
 			<div class="aod-talent-tree-grid">
 				<!-- Slayer -->
-				<a class="aod-talent-tree-talent" href="" data-row="1" data-column="3" data-cell="1" data-talent-type="1" data-tooltip-mode="icon" data-no-touch-lightbox="true">
+				<a class="aod-talent-tree-talent" href="resources/img/slayer.png" data-row="1" data-column="3" data-cell="1" data-talent-type="1" data-tooltip-mode="icon" data-lightbox="slayer">
 					<div class="aod-talent-tree-talent-boundary">
 						<div class="aod-talent-tree-talent-inner">
 							<div class="aod-talent-tree-talent-inner-background" style="background-image: url(&quot;resources/img/slayer.png&quot;);"></div>
@@ -23,7 +21,7 @@
 						</div>
 					</div>
 				</a>
-				<div class="aod-talent-tree-talent-points"></div>
+				<div class="aod-talent-tree-talent-points-slayer">1/5</div>
 				<div class="aod-talent-tree-talent-found"></div>
 
 				<!-- Vigor -->
@@ -546,168 +544,252 @@
 			</div>
 
 			<div class="wrapper">
-				<div class="aod-talent-tree-connection" data-from-cell="1" data-to-cell="5" data-index="0" data-available="1" style="left: 213px; top: -29px; transform: rotate(2.83rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="1" data-to-cell="5" data-index="0" data-available="1" style="left: 198px; top: -27px; transform: rotate(2.8rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="1" data-to-cell="6" data-index="0" data-available="1" style="left: 213px; top: -29px; transform: rotate(0.3rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="1" data-to-cell="6" data-index="0" data-available="1" style="left: 198px; top: -27px; transform: rotate(.35rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="2" data-to-cell="7" data-index="0" data-available="1" style="left: 483px; top: -29px; transform: rotate(2.83rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="2" data-to-cell="7" data-index="0" data-available="1" style="left: 436px; top: -27px; transform: rotate(2.8rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="2" data-to-cell="8" data-index="0" data-available="1" style="left: 483px; top: -29px; transform: rotate(0.3rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="2" data-to-cell="8" data-index="0" data-available="1" style="left: 436px; top: -27px; transform: rotate(.35rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="3" data-to-cell="9" data-index="0" data-available="1" style="left: 935px; top: -29px; transform: rotate(2.83rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="3" data-to-cell="9" data-index="0" data-available="1" style="left: 836px; top: -27px; transform: rotate(2.8rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="3" data-to-cell="10" data-index="0" data-available="1" style="left: 935px; top: -29px; transform: rotate(0.3rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="3" data-to-cell="10" data-index="0" data-available="1" style="left: 836px; top: -27px; transform: rotate(.35rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="4" data-to-cell="11" data-index="0" data-available="1" style="left: 1387px; top: -29px; transform: rotate(2.83rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="4" data-to-cell="11" data-index="0" data-available="1" style="left: 1235px; top: -27px; transform: rotate(2.8rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="4" data-to-cell="12" data-index="0" data-available="1" style="left: 1387px; top: -29px; transform: rotate(0.3rad); width: 100px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="4" data-to-cell="12" data-index="0" data-available="1" style="left: 1235px; top: -27px; transform: rotate(.35rad); width: 100px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="5" data-to-cell="13" data-index="0" data-available="1" style="left: 122px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="5" data-to-cell="13" data-index="0" data-available="1" style="left: 115px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="6" data-to-cell="14" data-index="0" data-available="1" style="left: 303px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="6" data-to-cell="14" data-index="0" data-available="1" style="left: 276px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="7" data-to-cell="15" data-index="0" data-available="1" style="left: 393px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="7" data-to-cell="15" data-index="0" data-available="1" style="left: 356px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="8" data-to-cell="16" data-index="0" data-available="1" style="left: 574px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="8" data-to-cell="16" data-index="0" data-available="1" style="left: 516px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="16" data-to-cell="17" data-index="0" data-available="1" style="left: 605px; top: 122px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="16" data-to-cell="17" data-index="0" data-available="1" style="left: 545px; top: 126px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="9" data-to-cell="19" data-index="0" data-available="1" style="left: 845px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="9" data-to-cell="19" data-index="0" data-available="1" style="left: 756px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="9" data-to-cell="8" data-index="0" data-available="1" style="left: 786px; top: 122px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="9" data-to-cell="8" data-index="0" data-available="1" style="left: 706px; top: 126px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="10" data-to-cell="20" data-index="0" data-available="1" style="left: 1026px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="10" data-to-cell="20" data-index="0" data-available="1" style="left: 917px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="20" data-to-cell="21" data-index="0" data-available="1" style="left: 1057px; top: 122px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="20" data-to-cell="21" data-index="0" data-available="1" style="left: 945px; top: 126px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="23" data-to-cell="22" data-index="0" data-available="1" style="left: 1238px; top: 122px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="23" data-to-cell="22" data-index="0" data-available="1" style="left: 1098px; top: 126px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="11" data-to-cell="23" data-index="0" data-available="1" style="left: 1297px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="11" data-to-cell="23" data-index="0" data-available="1" style="left: 1155px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="12" data-to-cell="24" data-index="0" data-available="1" style="left: 1478px; top: 62px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="12" data-to-cell="24" data-index="0" data-available="1" style="left: 1315px; top: 64px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="24" data-to-cell="25" data-index="0" data-available="1" style="left: 1509px; top: 122px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="24" data-to-cell="25" data-index="0" data-available="1" style="left: 1341px; top: 126px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
 
-				<div class="aod-talent-tree-connection" data-from-cell="27" data-to-cell="26" data-index="0" data-available="1" style="left: 62px; top: 215px; transform: rotate(0rad); width: 28px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="27" data-to-cell="26" data-index="0" data-available="1" style="left: 64px; top: 217px; transform: rotate(0rad); width: 28px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="13" data-to-cell="27" data-index="0" data-available="1" style="left: 122px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="13" data-to-cell="27" data-index="0" data-available="1" style="left: 115px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="14" data-to-cell="28" data-index="0" data-available="1" style="left: 303px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="14" data-to-cell="28" data-index="0" data-available="1" style="left: 276px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="15" data-to-cell="29" data-index="0" data-available="1" style="left: 393px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="15" data-to-cell="29" data-index="0" data-available="1" style="left: 356px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="16" data-to-cell="30" data-index="0" data-available="1" style="left: 574px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="16" data-to-cell="30" data-index="0" data-available="1" style="left: 516px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="17" data-to-cell="31" data-index="0" data-available="1" style="left: 665px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="17" data-to-cell="31" data-index="0" data-available="1" style="left: 595px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="18" data-to-cell="32" data-index="0" data-available="1" style="left: 755px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="18" data-to-cell="32" data-index="0" data-available="1" style="left: 676px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="32" data-to-cell="33" data-index="0" data-available="1" style="left: 786px; top: 215px; transform: rotate(0rad); width: 119px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="32" data-to-cell="33" data-index="0" data-available="1" style="left: 706px; top: 215px; transform: rotate(0rad); width: 119px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="21" data-to-cell="34" data-index="0" data-available="1" style="left: 1116px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="21" data-to-cell="34" data-index="0" data-available="1" style="left: 996px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="22" data-to-cell="35" data-index="0" data-available="1" style="left: 1205px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="22" data-to-cell="35" data-index="0" data-available="1" style="left: 1076px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="25" data-to-cell="36" data-index="0" data-available="1" style="left: 1569px; top: 153px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="25" data-to-cell="36" data-index="0" data-available="1" style="left: 1396px; top: 157px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="27" data-to-cell="37" data-index="0" data-available="1" style="left: 122px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="27" data-to-cell="37" data-index="0" data-available="1" style="left: 115px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="28" data-to-cell="38" data-index="0" data-available="1" style="left: 303px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="28" data-to-cell="38" data-index="0" data-available="1" style="left: 276px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="29" data-to-cell="39" data-index="0" data-available="1" style="left: 393px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="29" data-to-cell="39" data-index="0" data-available="1" style="left: 356px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="30" data-to-cell="40" data-index="0" data-available="1" style="left: 574px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="30" data-to-cell="40" data-index="0" data-available="1" style="left: 516px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="33" data-to-cell="41" data-index="0" data-available="1" style="left: 936px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="33" data-to-cell="41" data-index="0" data-available="1" style="left: 835px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="36" data-to-cell="42" data-index="0" data-available="1" style="left: 1569px; top: 246px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="36" data-to-cell="42" data-index="0" data-available="1" style="left: 1396px; top: 249px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="37" data-to-cell="43" data-index="0" data-available="1" style="left: 1569px; top: 337px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="37" data-to-cell="43" data-index="0" data-available="1" style="left: 1396px; top: 340px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 
-				<div class="aod-talent-tree-connection" data-from-cell="41" data-to-cell="44" data-index="0" data-available="1" style="left: 122px; top: 337px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
+				<div class="aod-talent-tree-connection" data-from-cell="41" data-to-cell="44" data-index="0" data-available="1" style="left: 115px; top: 340px; transform: rotate(1.5780rad); width: 30px; z-index: 0">
 					<div class="aod-talent-tree-connection-line"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<div class="description-box"></div>
+		<div class="tooltips-body">
+		<div class="overlay">
+			<p id="talent-title">Slayer</p>
+			<p id="talent-descr">1% Armor Pierce</p>
+		</div>
+	</div>
+
+	<div class="checklist">
+		<div class="overlay-long">
+			<input type="checkbox" id="dungeon1" name="eternal-downfall" value="eternal-downfall">
+			<label for="dungeon1">Eternal Downfall</label><br>
+			<input type="checkbox" id="dungeon2" name="mountain-survival" value="mountain-survival">
+			<label for="dungeon2">Mountain Survival</label><br>
+			<input type="checkbox" id="dungeon3" name="dimensional-prison" value="dimensional-prison">
+			<label for="dungeon2">Dimensional Prison</label><br>
+			<input type="checkbox" id="dungeon4" name="void-rift" value="void-rift">
+			<label for="dungeon2">Void Rift</label><br>
+			<input type="checkbox" id="dungeon5" name="bonechill" value="bonechill">
+			<label for="dungeon2">Bonechill</label><br>
+			<div class="col-2-check">
+				<input type="checkbox" id="dungeon6" name="erupting-volcano" value="erupting-volcano">
+				<label for="dungeon2">Erupting Volcano</label><br>
+				<input type="checkbox" id="dungeon7" name="island-expedition" value="island-expedition">
+				<label for="dungeon2">Island Expedition</label><br>
+				<input type="checkbox" id="dungeon8" name="doom-tower" value="doom-tower">
+				<label for="dungeon2">Doom Tower</label><br>
+				<input type="checkbox" id="dungeon9" name="city-of-dead" value="city-of-dead">
+				<label for="dungeon2">City of Dead</label><br>
+				<input type="checkbox" id="dungeon10" name="abyss" value="abyss">
+				<label for="dungeon2">Abyss</label><br>
+			</div>
+			<div class="col-3-check">
+				<input type="checkbox" id="dungeon11" name="dark-elf-fortress" value="dark-elf-fortress">
+				<label for="dungeon2">Dark Elf Fortress</label><br>
+				<input type="checkbox" id="odin" name="odin" value="odin">
+				<label for="dungeon2">Odin</label><br>
+				<input type="checkbox" id="raph" name="raph" value="raph">
+				<label for="dungeon2">Raph</label><br>
+				<input type="checkbox" id="loki" name="loki" value="loki">
+				<label for="dungeon2">Loki</label><br>
+			</div>
+			<div class="col-4-check">
+				<input type="checkbox" id="dungeon12" name="arena" value="arena">
+				<label for="dungeon2">Arena</label><br>
+				<input type="checkbox" id="dungeon13" name="heart" value="heart">
+				<label for="dungeon2">Heart of the Mountain</label><br>
+				<input type="checkbox" id="dungeon14" name="demon" value="demon">
+				<label for="dungeon2">Demon Summoning</label><br>
+				<input type="checkbox" id="dungeon15" name="advanced" value="advanced">
+				<label for="dungeon2">Advanced World</label><br>
+				<input type="checkbox" id="dungeon16" name="dragon" value="dragon">
+				<label for="dungeon2">Primal Dragon World</label><br>
+			</div>
+			<div class="col-5-check">
+				<input type="checkbox" id="challenge1" name="tomb" value="tomb">
+				<label for="dungeon2">Tomb of the First Born +15</label><br>
+				<input type="checkbox" id="challenge2" name="devoured" value="devoured">
+				<label for="dungeon2">Devoured! +15</label><br>
+				<input type="checkbox" id="challenge3" name="fountain" value="fountain">
+				<label for="dungeon2">Fountain of Youth +15</label><br>
+				<input type="checkbox" id="challenge4" name="black-hole" value="black-hole">
+				<label for="dungeon2">Black Hole +15</label><br>
+				<input type="checkbox" id="challenge5" name="return" value="return">
+				<label for="dungeon2">Return Challenge +15</label><br>
+			</div>
+			<div class="col-6-check">
+				<input type="checkbox" id="doom" name="doom" value="doom">
+				<label for="dungeon2">Doom 5 Raid</label><br>
+				<input type="checkbox" id="incursion" name="incursion" value="incursion">
+				<label for="dungeon2">Incursion</label><br>
+			</div>
+		</div>
+		<div class="overlay-points">
+			<p id="points-title">Talent Points</p>
+			<p id="points-left">Total Remaining Points: 0</p>
+			<p id="points-max">Total Maximum Points: 1</p>
+		</div>
+	</div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="resources/js/talentcalc.js"></script>
+	<script src="resources/js/lightbox.js"></script>
 </body>
 </html>
