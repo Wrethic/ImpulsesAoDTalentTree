@@ -4,10 +4,8 @@ var talent_points_max = [5,5,5,5,5,5,5,5,5,1,5,5,5,1,3,5,1,1,1,1,1,1,1,1,3,1,1,3
 var soul_level = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var total_max_points = 0;
 var used_points = 0;
-var talent_data = require('./../data/skill-values.json');
 
 $(document).ready(function() {
-    console.log(talent_data);
     var point_display = document.getElementsByClassName('aod-talent-tree-talent-points');
     talentC();
     for(var i=0;i < talents.length;i++){
@@ -39,7 +37,7 @@ $(document).ready(function() {
     }
         
     talentC();
-});
+    });
 });
 /* $("#list").on("change",listQ); */
 document.getElementById("rebirth").onchange = listQ;
@@ -56,9 +54,17 @@ function listQ(){
 }
 
 $('.aod-talent-tree-talent').hover(function () {
-    $('#slayer1').stop().fadeIn();
+    var talentHover = this.getAttribute('data-cell')-1;
+    var name = this.id.toString();
+    var desc = data[name][talent_points[talentHover]].description;
+    console.log(desc);
+    var overlay = document.getElementById('talent-description');
+    var title = document.getElementById('talent-title').textContent = name.charAt(0).toUpperCase() + name.slice(1)
+    var tooltip = document.getElementById('talent-descr').textContent = desc;
+
+    $(overlay).stop().fadeIn();
 }, function () {
-    $('#slayer1').stop().fadeOut();
+    $(document.getElementById('talent-description')).stop().fadeOut();
 });
 
 $('input').click(function(){

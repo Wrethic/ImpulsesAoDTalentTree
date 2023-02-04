@@ -13,7 +13,7 @@
 		<div class="aod-talent-tree-space" style="font-size: 9px";>
 			<div class="aod-talent-tree-grid">
 				<!-- Slayer -->
-				<a class="aod-talent-tree-talent" href="#" data-row="1" data-column="3" data-cell="1" data-talent-type="1" data-tooltip-mode="icon">
+				<a class="aod-talent-tree-talent" id="slayer"  href="#" data-row="1" data-column="3" data-cell="1" data-talent-type="1" data-tooltip-mode="icon">
 					<div class="aod-talent-tree-talent-boundary">
 						<div class="aod-talent-tree-talent-inner">
 							<div class="aod-talent-tree-talent-inner-background" style="background-image: url(&quot;resources/img/slayer.png&quot;);"></div>
@@ -21,11 +21,11 @@
 						</div>
 					</div>
 				</a>
-				<div class="aod-talent-tree-talent-points" id="slayer" style="left: 204px;top: 49px;"></div>
+				<div class="aod-talent-tree-talent-points" style="left: 204px;top: 49px;"></div>
 				<div class="aod-talent-tree-talent-found"></div>
 
 				<!-- Vigor -->
-				<a class="aod-talent-tree-talent" href="#" data-row="1" data-column="6" data-cell="2" data-talent-type="1" data-tooltip-mode="icon">
+				<a class="aod-talent-tree-talent" id="vigor" href="#" data-row="1" data-column="6" data-cell="2" data-talent-type="1" data-tooltip-mode="icon">
 					<div class="aod-talent-tree-talent-boundary">
 						<div class="aod-talent-tree-talent-inner">
 							<div class="aod-talent-tree-talent-inner-background" style="background-image: url(&quot;resources/img/vigor.png&quot;);"></div>
@@ -33,7 +33,7 @@
 						</div>
 					</div>
 				</a>
-				<div class="aod-talent-tree-talent-points" id="vigor" style="left: 444px;top: 49px;"></div>
+				<div class="aod-talent-tree-talent-points" style="left: 444px;top: 49px;"></div>
 				<div class="aod-talent-tree-talent-found"></div>
 
 				<!-- Resilience -->
@@ -711,7 +711,7 @@
 	<div class="description-box"></div>
 		<div class="tooltips-body">
 		<div class="overlay">
-			<div id="slayer1">
+			<div id="talent-description">
 				<p id="talent-title">Slayer</p>
 				<p id="talent-descr">1% Armor Pierce</p>
 			</div>
@@ -806,6 +806,7 @@
 	</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="resources/js/talentdata.js"></script>
 	<script src="resources/js/talentcalc.js"></script>
 </body>
 </html>
