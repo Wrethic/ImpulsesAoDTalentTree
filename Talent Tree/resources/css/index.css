@@ -247,6 +247,9 @@ p {
 label{
     color: white;
 }
+form {
+    margin-left: 12px;
+}
 .description-box {
     background-image: url("../img/background.jpg");
     position:absolute;
@@ -300,10 +303,8 @@ label{
     left: 875px;
     height: 110px;
 }
-.aod-talent-tree-talent-points-slayer {
+.aod-talent-tree-talent-points {
     position: absolute;
-    left: 204px;
-    top: 49px;
     color: white;
     z-index: 100;
     border-radius: 6px;
