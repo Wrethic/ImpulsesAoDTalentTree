@@ -4,6 +4,7 @@ var talent_points_max = [5,5,5,5,5,5,5,5,5,1,5,5,5,1,3,5,1,1,1,1,1,1,1,1,3,1,1,3
 var soul_level = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var total_max_points = 0;
 var used_points = 0;
+var table = document.getElementById('results').rows;
 
 $(document).ready(function() {
     var point_display = document.getElementsByClassName('aod-talent-tree-talent-points');
@@ -101,26 +102,29 @@ function descUpdate(e, k){
     for (let i = 0; i < words.length; i++) {
         words[i] = words[i][0].toUpperCase() + words[i].substr(1);
     }
-    document.getElementById('talent-title').textContent = words.join(" ");
+    title = document.getElementById('talent-title');
+    title.textContent = words.join(" ");
+    tableData(title)
 
     var tooltip = document.getElementById('talent-descr').textContent = desc;    
 }
 
-var myTableArray = [];
-tableData();
-
-function tableData() {
+function tableData(e) {
     var table = document.getElementById('results');
-    console.log(table.rows[0].children);
-    $("table#results tr").each(function() {
-        var arrayOfThisRow = [];
-        var tableData = $(this).find('td');
-        if (tableData.length > 0) {
-            tableData.each(function() { arrayOfThisRow.push($(this).text()); });
-            myTableArray.push(arrayOfThisRow);
+    console.log(table.rows.length);
+    for(count=1;count < table.rows.length;count++){
+        console.log(table.rows[count].children[0].innerHTML);
+        if(table.rows[count].children[0].innerHTML == "" ){
+            var newRow = count;
+            console.log(newRow);
+            break;
         }
-        console.log(myTableArray);
-    });
+        else if (table[count].children[0].innerText === e.innerText) {
+            var newRow = count;
+
+            break;
+        }
+    }
 }
 
 $('input').click(function(){
