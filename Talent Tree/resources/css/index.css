@@ -243,6 +243,26 @@ p {
     top: 0px;
     left: 983px;
 }
+.displayOverlay {
+    background-image: url("../../resources/img/background.jfif");
+    background-repeat: no-repeat;
+    position:absolute;
+    left: -253px;
+    border: #A1A6A4 solid 3px;
+    height: 500px;   
+    width: 1600px;
+    top: 151px;
+}
+.displayBox {
+    border-radius: 6px;
+    border: #A1A6A4 solid 3px;
+    background-color: rgba(0,0,0,.8);
+    height: 450px;
+    width: 1550px;
+    position: absolute;
+    top: 25px;
+    left: 25px;  
+}
 
 label{
     color: white;
@@ -314,4 +334,24 @@ form {
 
 #talent-description {
     display: none;
+}
+tr {
+    color: white;
+}
+
+th {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+td {
+    width: 50%;
+    text-align: left;
+    height: 1.2em;
+}
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: 8%;
+  min-width: 8%;
+  max-width: 8%;
+  word-break: break-all;
 }
