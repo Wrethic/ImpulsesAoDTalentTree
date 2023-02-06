@@ -1,7 +1,7 @@
 var talents  = document.getElementsByClassName('aod-talent-tree-talent');
 var talent_points = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var talent_points_max = [5,5,5,5,5,5,5,5,5,1,5,5,5,1,3,5,1,1,1,1,1,1,1,1,3,1,1,3,1,1,1,1,1,1,3,1,5,1,2,1,1,5,1,1];
-var soul_level = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var soul_level = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 var total_max_points = 0;
 var used_points = 0;
 var table = document.getElementById('results');
@@ -109,6 +109,55 @@ window.addEventListener('contextmenu', (ev) => {
         }
         
     talentC();
+    });
+    var e = $('#reset').click(function(e) {
+        var k = document.getElementsByTagName('input');
+        var x = document.getElementById('rebirth');
+        var pointText = 0;
+        const connector = document.getElementsByClassName('aod-talent-tree-connection');
+        for (i=0;i < k.length;i++){
+            k[i].checked = false;
+        }
+        x.selectedIndex = 0;
+        for (i=0;i < talents.length;i++) {
+            if (i < 4){
+                talents[i].setAttribute('data-enabled','true');
+            }
+            else{
+                talents[i].setAttribute('data-enabled','false');
+            }
+            pointText = talents[i].nextElementSibling;
+            talent_points[i] = 0;
+            console.log(talent_points[i]);
+            pointText.textContent = talent_points[i].toString() + "/" + talent_points_max[i].toString();            
+        }
+        used_points = 0;
+        total_max_points = 0;
+        for (i=0;i < soul_level.length;i++) {
+            soul_level[i] = 0;
+        }
+        for (i=0;i < connector.length;i++){
+            connector[i].children[0].style.backgroundImage = "url('resources/img/talents-arrow-line-gray.png')";
+        }
+        for(count=1;count < table.rows.length;count++){
+            table.rows[count].children[0].textContent = "";
+            table.rows[count].children[1].textContent = "";
+        }
+        talentC();
+    });
+    var e = $('#max-points').click(function(e) {
+        var k = document.getElementsByTagName('input');
+        var x = document.getElementById('rebirth');
+        for (i=0;i < k.length;i++){
+            k[i].checked = true;
+        }
+        x.selectedIndex = 9;
+        for (i=0;i < soul_level.length;i++){
+            soul_level[i] = 1;
+        }
+        soul_level[26] = 9;
+        total_max_points = 35;
+        talentC();
     });
 });
 /* $("#list").on("change",listQ); */
