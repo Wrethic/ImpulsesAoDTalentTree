@@ -177,25 +177,6 @@
     position: absolute;
 }
 
-.aod-talent-tree-connection-arrow {
-    background-image: url(../../resources/img/talents-arrow-head-gray.png);
-    background-size: cover;
-    height: 12px;
-    position: absolute;
-    right: -6px;
-    top: 0;
-    transform: rotate(270deg);
-    width: 12px;
-}
-
-.aod-talent-tree-connection[data-available] .dragonflight-talent-tree-connection-line {
-    background-image: url(../../resources/img/talents-arrow-line-yellow.png);
-}
-
-.aod-talent-tree-connection[data-available] .dragonflight-talent-tree-connection-arrow {
-    background-image: url(../../resources/img/talents-arrow-head-yellow.png);
-}
-
 .color {
     border: 3px black solid;
 }

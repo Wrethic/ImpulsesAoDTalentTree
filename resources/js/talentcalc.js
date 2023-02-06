@@ -18,27 +18,59 @@ window.addEventListener('contextmenu', (ev) => {
         const k = ev.getAttribute('data-cell')-1;
         const pointText = ev.nextElementSibling;
         const remaining_points = total_max_points - used_points;
-        if(talent_points[k] > 0 && remaining_points < total_max_points && ev.getAttribute('data-enabled') === "true") {
+        if(talent_points[k] > 0 && ev.getAttribute('data-enabled') === "true") {
             used_points--;
             talent_points[k] = talent_points[k] - 1;
             const textUpdate = pointText.textContent = talent_points[k].toString() + "/" + talent_points_max[k].toString();
             descUpdate(ev, k);
             talentC();
         }
-        if (talent_points[k] == 0) {
+        if (talent_points[k] == talent_points_max[k] ) {
             const from = ev.getAttribute('data-cell')
             const connector = document.getElementsByClassName('aod-talent-tree-connection');
+            var num = 0;
+            var p = [0];
+            var stop = 0;
             for(i=0; i < connector.length;i++){
                 if (from == connector[i].getAttribute('data-to-cell')) {
                     var n = connector[i].getAttribute('data-from-cell');
-                    break;
+                }
+                else if (from == connector[i].getAttribute('data-from-cell')){
+                    p[num] = connector[i].getAttribute('data-to-cell');
+                    num++;
                 }
             }
             var z = document.getElementsByClassName('aod-talent-tree-talent');
-            for(i=0; i < z.length;i++) {
-                if (z[i].getAttribute('data-cell') == 1) {
-                    z[i].setAttribute('data-enabled','true');
+            //console.log(p);
+            for(i=0; i < p.length;i++){
+                if (talent_points[p[i]-1] > 0) {
+                    stop = 1;
                     break;
+                }
+                else {
+                    stop = 0;
+                }
+            }
+            if (stop == 0) {
+                used_points--;
+                talent_points[k] = talent_points[k] - 1;
+                const textUpdate = pointText.textContent = talent_points[k].toString() + "/" + talent_points_max[k].toString();
+                descUpdate(ev, k);
+                talentC();
+                for (i=0; i < p.length;i++){
+                    console.log(p[i]);
+                    for(d=0; d < connector.length; d++){
+                        console.log(connector[d].getAttribute('data-to-cell'));
+                        if (p[i] == connector[d].getAttribute('data-to-cell')){
+                            connector[d].children[0].style.backgroundImage = "url('resources/img/talents-arrow-line-gray.png')";
+                        }
+                    }
+                }
+                for(i=0; i < z.length;i++) {
+                    if (z[i].getAttribute('data-cell') == ev.getAttribute('data-cell')) {
+                        z[i].setAttribute('data-enabled','true');
+                        break;
+                    }
                 }
             }
         }
@@ -69,6 +101,7 @@ window.addEventListener('contextmenu', (ev) => {
                 for(z=0; z < n.length;z++){
                     if (n[z] == next[i].getAttribute('data-cell')){
                         next[i].setAttribute('data-enabled','true');
+                        connector[z].children[0].style.backgroundImage = "url('resources/img/talents-arrow-line-yellow.png')";
                     }
                 }
             }
