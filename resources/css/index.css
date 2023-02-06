@@ -336,3 +336,29 @@ tbody tr td:first-child {
   max-width: 8%;
   word-break: break-all;
 }
+.global-buttons{
+    position: absolute;
+    left: 740px;
+    top: 595px;
+    cursor: default;
+}
+.global-btn {
+    background-color: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 2px white solid;
+    border-radius: 8px;
+    box-shadow: 0 2px white;
+    cursor: pointer;
+}
+.global-btn:active {
+    box-shadow: 0 0px white;
+    transform: translateY(2px);
+}
+#reset {
+    margin-right: 10px;
+}
+#max-points {
+    margin-left: 10px;
+}
