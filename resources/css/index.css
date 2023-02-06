@@ -23,6 +23,7 @@
     position: relative;
     user-select: none;
     pointer-events: auto;
+    height: 1220px;
 }
 
 .aod-talent-tree-talent {
@@ -184,7 +185,7 @@
 .tooltips-body {
     position:absolute;
     left: 8px;
-    top: 633px;
+    top: 561px;
     margin: 0;
     height: 110px;
     width: 250px;
@@ -232,7 +233,7 @@ p {
     border: #A1A6A4 solid 3px;
     height: 505px;   
     width: 1600px;
-    top: 151px;
+    top: 150px;
 }
 .displayBox {
     border-radius: 6px;
@@ -255,7 +256,7 @@ form {
     background-image: url("../img/background.jpg");
     position:absolute;
     left: 8px;
-    top: 633px;
+    top: 561px;
     border: #A1A6A4 solid 3px;
     height: 150px;
     width: 250px;   
@@ -264,7 +265,7 @@ form {
 .checklist {
     position:absolute;
     left: 258px;
-    top: 633px;
+    top: 561px;
     border:  #A1A6A4 solid 3px;
     height: 150px;
     width: 1350px;
@@ -338,8 +339,8 @@ tbody tr td:first-child {
 }
 .global-buttons{
     position: absolute;
-    left: 740px;
-    top: 595px;
+    left: 400px;
+    top: 510px;
     cursor: default;
 }
 .global-btn {
@@ -356,9 +357,29 @@ tbody tr td:first-child {
     box-shadow: 0 0px white;
     transform: translateY(2px);
 }
-#reset {
-    margin-right: 10px;
-}
 #max-points {
-    margin-left: 10px;
+    margin-left: 15px;
+}
+#save {
+    margin-left: 15px;
+}
+#load {
+    margin-left: 15px;
+}
+#code {
+    margin-left: 15px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    border: solid white 2px;
+    border-radius: 8px;
+    width: 450px;
+    position: absolute;
+    top: -17px;
+    box-shadow: 0 2px;
+}
+
+#code::placeholder {
+    color: white;
 }

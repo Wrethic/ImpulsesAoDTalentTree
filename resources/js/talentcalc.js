@@ -111,6 +111,75 @@ window.addEventListener('contextmenu', (ev) => {
     talentC();
     });
     var e = $('#reset').click(function(e) {
+        reset();
+    });
+    var e = $('#max-points').click(function(e) {
+        var k = document.getElementsByTagName('input');
+        var x = document.getElementById('rebirth');
+        for (i=0;i < k.length;i++){
+            k[i].checked = true;
+        }
+        x.selectedIndex = 9;
+        for (i=0;i < soul_level.length;i++){
+            soul_level[i] = 1;
+        }
+        soul_level[26] = 9;
+        total_max_points = 35;
+        talentC();
+    });
+
+    var e = $('#save').click(function(e) {
+        var code = [0];
+        for (i=0;i < soul_level.length;i++){
+            code[i] = soul_level[i];
+        }
+        for (i=0;i < talent_points.length;i++){
+            code[i+27] = talent_points[i];
+        }
+        var output = code.join("");
+        document.getElementById('code').value = output;
+    });
+
+    var e = $('#load').click(function(e) {
+        reset();
+        var code = document.getElementById('code').value.split("");
+        console.log(code);
+        for (i=0;i < soul_level.length;i++){
+            soul_level[i] = Number(code[i]);
+            total_max_points = Number(total_max_points) + Number(soul_level[i]);
+        }
+        for (i=0;i < talent_points.length;i++){
+            talent_points[i] = Number(code[i+27]);
+            used_points = Number(used_points) + Number(talent_points[i]);
+            console.log(used_points);
+        }
+        talentC();
+
+        for (i=0;i < talents.length;i++) {
+            pointText = talents[i].nextElementSibling;
+            pointText.textContent = talent_points[i].toString() + "/" + talent_points_max[i].toString();
+            if (talent_points[i] > 0){
+                descUpdate(talents[i],i);
+            }
+        }
+    });
+});
+/* $("#list").on("change",listQ); */
+document.getElementById("rebirth").onchange = listQ;
+
+function talentC(){
+    total_max_points = soul_level.reduce((accumulator, current) => accumulator + current);
+    var max_points = document.getElementById('points-max').textContent = "Total Maximum Points: "+total_max_points.toString();
+    var remaining_points = document.getElementById('points-left').textContent = "Total Remaining Points: "+(total_max_points-used_points).toString();
+}
+
+function listQ(){
+    soul_level[26] = Number($(this).val());
+    talentC();
+}
+
+function reset(){
+
         var k = document.getElementsByTagName('input');
         var x = document.getElementById('rebirth');
         var pointText = 0;
@@ -144,34 +213,6 @@ window.addEventListener('contextmenu', (ev) => {
             table.rows[count].children[1].textContent = "";
         }
         talentC();
-    });
-    var e = $('#max-points').click(function(e) {
-        var k = document.getElementsByTagName('input');
-        var x = document.getElementById('rebirth');
-        for (i=0;i < k.length;i++){
-            k[i].checked = true;
-        }
-        x.selectedIndex = 9;
-        for (i=0;i < soul_level.length;i++){
-            soul_level[i] = 1;
-        }
-        soul_level[26] = 9;
-        total_max_points = 35;
-        talentC();
-    });
-});
-/* $("#list").on("change",listQ); */
-document.getElementById("rebirth").onchange = listQ;
-
-function talentC(){
-    total_max_points = soul_level.reduce((accumulator, current) => accumulator + current);
-    var max_points = document.getElementById('points-max').textContent = "Total Maximum Points: "+total_max_points.toString();
-    var remaining_points = document.getElementById('points-left').textContent = "Total Remaining Points: "+(total_max_points-used_points).toString();
-}
-
-function listQ(){
-    soul_level[26] = Number($(this).val());
-    talentC();
 }
 
 $('.aod-talent-tree-talent').hover(function () {
